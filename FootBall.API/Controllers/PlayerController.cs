@@ -1,13 +1,12 @@
-﻿using FootBall.API.Interfaces;
-using FootBall.API.Models;
-using Microsoft.AspNetCore.Mvc;
-
+﻿
 namespace FootBall.API.Controllers
 {
     using FootBall.API.Context;
     using FootBall.API.Models;
+    using FootBall.API.Entities;
     using FootBall.API.Interfaces;
 
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
 
     [ApiController]
@@ -43,12 +42,20 @@ namespace FootBall.API.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<ActionResult<Player>> Create([FromQuery] Player player)
+        public async Task<ActionResult<Player>> Create([FromQuery] CreatePlayerModel player)
         {
             if (player == null)
                 return this.BadRequest();
 
-            db.player.Add(player);
+            
+            db.player.Add(new Player
+            {
+                Name = player.Name,
+                Surname = player.Surname,
+                Age = player.Age,
+                Position = player.Position,
+                Rating = player.Rating
+            });
 
             await this.db.SaveChangesAsync();
 
@@ -84,32 +91,3 @@ namespace FootBall.API.Controllers
         }
     }
 }
-
-
-/*
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace FootBall.API.Controllers
-{
-    using FootBall.API.Context;
-    using FootBall.API.Entity;
-    using FootBall.API.Models;
-
-    using Microsoft.EntityFrameworkCore;
-
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UserController : ControllerBase
-    {
-        private readonly UserContext db;
-
-        public UserController(UserContext db)
-        {
-            this.db = db;
-        }
-
-        
-    }
-}
-*/
