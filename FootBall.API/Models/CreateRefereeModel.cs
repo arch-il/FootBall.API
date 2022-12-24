@@ -2,7 +2,7 @@
 
 namespace FootBall.API.Models
 {
-    public class CreatePlayerModel
+    public class CreateRefereeModel
     {
         [Required]
         public string Name { get; set; }
@@ -11,8 +11,8 @@ namespace FootBall.API.Models
         [Required]
         public int Age { get; set; }
         [Required]
-        public string Position { get; set; }
+        public int CardsGiven { get; set; }
         [Required]
-        public double Rating { get; set; }
+        public double Experience { get; set; }
     }
 }
