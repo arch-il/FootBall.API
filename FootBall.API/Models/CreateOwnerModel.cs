@@ -1,11 +1,10 @@
 ﻿namespace FootBall.API.Models
 {
-    public class CreateRefereeModel
+    public abstract class CreateOwnerModel<T>
     {
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }
-        public int CardsGiven { get; set; }
-        public double Experience { get; set; }
+        public List<T> TOwner { get; set; }
     }
 }

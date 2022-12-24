@@ -16,5 +16,7 @@ namespace FootBall.API.Entities
         public string Position { get; set; }
         [Required]
         public double Rating { get; set; }
+        [Required]
+        public Team team { get; set; }
     }
 }
