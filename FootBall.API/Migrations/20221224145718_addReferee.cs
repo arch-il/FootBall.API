@@ -4,12 +4,12 @@
 
 namespace FootBall.API.Migrations
 {
-    public partial class addPlayer : Migration
+    public partial class addReferee : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "player",
+                name: "referee",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -17,19 +17,19 @@ namespace FootBall.API.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    Position = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Rating = table.Column<double>(type: "float", nullable: false)
+                    CardsGiven = table.Column<int>(type: "int", nullable: false),
+                    Experience = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_player", x => x.Id);
+                    table.PrimaryKey("PK_referee", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "player");
+                name: "referee");
         }
     }
 }

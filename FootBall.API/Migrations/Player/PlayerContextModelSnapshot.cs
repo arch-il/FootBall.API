@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FootBall.API.Migrations.Referee
+namespace FootBall.API.Migrations.Player
 {
-    [DbContext(typeof(RefereeContext))]
-    partial class RefereeContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(PlayerContext))]
+    partial class PlayerContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace FootBall.API.Migrations.Referee
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("FootBall.API.Entities.Referee", b =>
+            modelBuilder.Entity("FootBall.API.Entities.Player", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,15 +32,16 @@ namespace FootBall.API.Migrations.Referee
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("CardsGiven")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Experience")
-                        .HasColumnType("float");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -48,7 +49,7 @@ namespace FootBall.API.Migrations.Referee
 
                     b.HasKey("Id");
 
-                    b.ToTable("referee");
+                    b.ToTable("player");
                 });
 #pragma warning restore 612, 618
         }

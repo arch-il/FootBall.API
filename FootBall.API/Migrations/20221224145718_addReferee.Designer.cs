@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FootBall.API.Migrations.Referee
+namespace FootBall.API.Migrations
 {
     [DbContext(typeof(RefereeContext))]
-    [Migration("20221224145209_addReferee")]
+    [Migration("20221224145718_addReferee")]
     partial class addReferee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
