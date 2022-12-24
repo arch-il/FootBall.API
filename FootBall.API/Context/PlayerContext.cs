@@ -3,7 +3,7 @@
 namespace FootBall.API.Context
 {
     using Microsoft.EntityFrameworkCore;
-    using FootBall.API.Models;
+    using FootBall.API.Entities;
     public sealed class PlayerContext : DbContext
     {
         public DbSet<Player> player { get; set; }

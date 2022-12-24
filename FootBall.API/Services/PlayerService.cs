@@ -1,7 +1,7 @@
 ﻿namespace FootBall.API.Services
 {
     using FootBall.API.Interfaces;
-    using FootBall.API.Models;
+    using FootBall.API.Entities;
     public class PlayerService : IPlayerService
     {
         public Player GetConcrettePlayer(Player player)
