@@ -14,9 +14,9 @@
     {
         private readonly ILogger<RefereeController> _logger;
         private readonly IRefereeService _refereeService;
-        private readonly RefereeContext db;
+        private readonly UserContext db;
 
-        public RefereeController(ILogger<RefereeController> logger, IRefereeService refereeService, RefereeContext db)
+        public RefereeController(ILogger<RefereeController> logger, IRefereeService refereeService, UserContext db)
         {
             _logger = logger;
             _refereeService = refereeService;

@@ -15,9 +15,9 @@ namespace FootBall.API.Controllers
     {
         private readonly ILogger<PlayerController> _logger;
         private readonly IPlayerService _playerService;
-        private readonly PlayerContext db;
+        private readonly UserContext db;
 
-        public PlayerController(ILogger<PlayerController> logger, IPlayerService playerService, PlayerContext db)
+        public PlayerController(ILogger<PlayerController> logger, IPlayerService playerService, UserContext db)
         {
             _logger = logger;
             _playerService = playerService;
