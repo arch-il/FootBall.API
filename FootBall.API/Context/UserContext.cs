@@ -9,6 +9,7 @@ namespace FootBall.API.Context
         public DbSet<Player> player { get; set; }
         public DbSet<Referee> referee { get; set; }
         public DbSet<Team> team { get; set; }
+        public DbSet<Stadium> stadium { get; set; }
         public UserContext(DbContextOptions<UserContext> options)
             : base(options)
         {

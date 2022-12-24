@@ -1,5 +1,4 @@
-﻿
-namespace FootBall.API.Controllers
+﻿namespace FootBall.API.Controllers
 {
     using FootBall.API.Context;
     using FootBall.API.Models;
