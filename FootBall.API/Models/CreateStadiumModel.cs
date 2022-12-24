@@ -1,5 +1,6 @@
 ﻿namespace FootBall.API.Models
 {
+    using FootBall.API.Entities;
     public class CreateStadiumModel
     {
         public string StadiumName { get; set; }
