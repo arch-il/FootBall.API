@@ -3,16 +3,18 @@ using FootBall.API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace FootBall.API.Migrations
 {
-    [DbContext(typeof(PlayerContext))]
-    partial class PlayerContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(RefereeContext))]
+    [Migration("20221224152005_innit")]
+    partial class innit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace FootBall.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("FootBall.API.Entities.Player", b =>
+            modelBuilder.Entity("FootBall.API.Entities.Referee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,16 +34,15 @@ namespace FootBall.API.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<int>("CardsGiven")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Experience")
+                        .HasColumnType("float");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Position")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Rating")
-                        .HasColumnType("float");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -49,7 +50,7 @@ namespace FootBall.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("player");
+                    b.ToTable("referee");
                 });
 #pragma warning restore 612, 618
         }
