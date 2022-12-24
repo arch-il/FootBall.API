@@ -10,5 +10,6 @@
         public int TotalWins { get; set; }
         public int TotalLoses { get; set; }
         public int TotalDraw { get; set; }
+        public TeamOwner teamOwner { get; set; }
     }
 }

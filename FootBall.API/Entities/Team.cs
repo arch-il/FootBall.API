@@ -20,5 +20,7 @@ namespace FootBall.API.Entities
         public int TotalLoses { get; set; }
         [Required]
         public int TotalDraw { get; set; }
+        [Required]
+        public TeamOwner teamOwner { get; set; }
     }
 }

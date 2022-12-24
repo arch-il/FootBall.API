@@ -14,5 +14,7 @@ namespace FootBall.API.Entities
         public string Country { get; set; }
         [Required]
         public List<Team> Teams { get; set; }
+        [Required]
+        public StadiumOwner stadiumOwner { get; set; }
     }
 }
