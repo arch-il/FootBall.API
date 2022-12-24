@@ -10,7 +10,7 @@
                 player.Name.Length < 3 ||
                 player.Surname.Length < 3 ||
                 player.Age < 14 ||
-                player.Platform.Length < 3 ||
+                player.Position.Length < 3 ||
                 player.Rating < 0
                 )
             {

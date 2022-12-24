@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FootBall.API.Models
+namespace FootBall.API.Entities
 {
-    public class CreatePlayerModel
+    public class Referee
     {
+        [Key]
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -11,8 +13,8 @@ namespace FootBall.API.Models
         [Required]
         public int Age { get; set; }
         [Required]
-        public string Position { get; set; }
+        public int CardsGiven { get; set; }
         [Required]
-        public double Rating { get; set; }
+        public double Experience { get; set; }
     }
 }
