@@ -42,20 +42,12 @@ namespace FootBall.API.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<ActionResult<Player>> Create([FromQuery] CreatePlayerModel player)
+        public async Task<ActionResult<Player>> Create([FromQuery] Player player)
         {
             if (player == null)
                 return this.BadRequest();
 
-            
-            db.player.Add(new Player
-            {
-                Name = player.Name,
-                Surname = player.Surname,
-                Age = player.Age,
-                Position = player.Position,
-                Rating = player.Rating
-            });
+            db.player.Add(player);
 
             await this.db.SaveChangesAsync();
 
