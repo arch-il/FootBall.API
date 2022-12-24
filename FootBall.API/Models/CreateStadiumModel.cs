@@ -1,4 +1,4 @@
-﻿namespace FootBall.API.Entities
+﻿namespace FootBall.API.Models
 {
     public class CreateStadiumModel
     {

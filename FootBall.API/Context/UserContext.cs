@@ -12,6 +12,7 @@ namespace FootBall.API.Context
         public DbSet<Stadium> stadium { get; set; }
         public DbSet<StadiumOwner> stadiumOwner { get; set; }
         public DbSet<TeamOwner> teamOwner { get; set; }
+        public DbSet<Match> match { get; set; }
         public UserContext(DbContextOptions<UserContext> options)
             : base(options)
         {

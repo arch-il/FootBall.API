@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FootBall.API.Models
+﻿namespace FootBall.API.Models
 {
     public abstract class CreateOwnerModel<T>
     {
